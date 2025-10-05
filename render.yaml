@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: emotion-recognition
+    env: docker
+    plan: free
+    region: singapore
