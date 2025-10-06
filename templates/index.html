@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emotion Recognition</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Audio Emotion Recognition</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".wav" required>
+            <button type="submit">Analyze Emotion</button>
+        </form>
+
+        {% if emotion %}
+        <div class="result">
+            <h2>Predicted Emotion:</h2>
+            <h3>{{ emotion }}</h3>
+            <p class="confidence">Confidence: {{ confidence }}%</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
